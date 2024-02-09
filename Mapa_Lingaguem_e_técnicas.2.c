@@ -12,7 +12,7 @@ struct cadastro cliente[999];
 int cont = 0;
 
 void menu(){
-    printf("Bem-vindo ao nosso sistema! Escolha uma das seguintes opções\n");
+    printf("Bem-vindo ao nosso sistema! Escolha uma das seguintes opÃ§Ãµes\n");
     printf("1 - Solicitar Atendimento\n");
     printf("2 - Listar Atendimentos Registrados\n");
     printf("3 - Listar Atendimento por Setor\n");
@@ -20,10 +20,10 @@ void menu(){
 }
 
 void setores(){
-	printf("\n\n1 - Abertura de Conta\n");
+    printf("\n\n1 - Abertura de Conta\n");
     printf("2 - Caixa\n");
-    printf("3 - Gerente Pessoa Física\n");
-    printf("4 - Gerente Pessoa Jurídica\n");
+    printf("3 - Gerente Pessoa FÃ­sica\n");
+    printf("4 - Gerente Pessoa JurÃ­dica\n");
 }
 
 void cadastrar(){
@@ -33,15 +33,15 @@ void cadastrar(){
     fgets(cliente[cont].cpf, sizeof(cliente[0].cpf), stdin); 
     printf("\nDigite o setor pelo qual deseja ser atendido:");  
     setores();
-   	scanf("%d", &cliente[cont].setor);
+    scanf("%d", &cliente[cont].setor);
    	
     while(cliente[cont].setor < 1 || cliente[cont].setor > 4){
-    	system("cls");
-    	printf("Esse não é um setor válido!\n");
-    	printf("Por favor, digite novamente o setor pelo qual você deseja ser atendido: ");
-    	setores();
-    	scanf("%d", &cliente[cont].setor);
-	}
+    	 system("cls");
+    	 printf("Esse nÃ£o Ã© um setor vÃ¡lido!\n");
+    	 printf("Por favor, digite novamente o setor pelo qual vocÃª deseja ser atendido: ");
+    	 setores();
+    	 scanf("%d", &cliente[cont].setor);
+    }
     cont++;
     system("cls");
 }
@@ -62,17 +62,17 @@ void listar_atendimentos(){
 
 void filtrar_setor(){
     int setor, i, testa = 0;
-    printf("Digite o setor que você deseja verificar: ");
+    printf("Digite o setor que vocÃª deseja verificar: ");
     setores();
     scanf("%d", &setor); 
     
     while(setor < 1 || setor > 4){
     	system("cls");
-    	printf("Esse não é um setor válido!");
+    	printf("Esse nÃ£o Ã© um setor vÃ¡lido!");
     	setores();
-    	printf("\nPor favor, digite novamente o setor que você deseja verificar: ");
+    	printf("\nPor favor, digite novamente o setor que vocÃª deseja verificar: ");
     	scanf("%d", &setor);
-	}
+    }
 
     for(i = 0; i < cont; i++){	
         if(cliente[i].setor == setor){
@@ -86,7 +86,7 @@ void filtrar_setor(){
     if(testa == 0){
     	printf("===============================\n");
         printf("Nenhum atendimento registrado nesse setor!\n");
-	}
+    }
 }
 
 int main() {
@@ -121,10 +121,9 @@ int main() {
                 break;
             }
             default : {
-                printf("Opção inválida! Por favor, tente novamente.\n");
+                printf("OpÃ§Ã£o invÃ¡lida! Por favor, tente novamente.\n");
                 system("pause");
-
-                system("cls");
+		system("cls");
                 break;
             }
             
